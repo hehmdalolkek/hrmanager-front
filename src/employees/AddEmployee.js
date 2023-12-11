@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 require('dotenv').config();
 
-const baseUrl = process.env.BACKEND-URL;
+const baseUrl = process.env.BACKEND;
 
 export default function AddEmployee() {
 

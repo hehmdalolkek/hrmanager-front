@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 require('dotenv').config();
 
-const baseUrl = process.env.BACKEND-URL;
+const baseUrl = process.env.BACKEND;
 
 export default function ViewEmployee() {
 
