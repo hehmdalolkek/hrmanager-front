@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 const baseUrl = process.env.REACT_APP_BACKEND;
 
 export default function Home() {
-  console.log(baseUrl);
-
   const [departments, setDepartments] = useState([]);
 
   useEffect(() => {
