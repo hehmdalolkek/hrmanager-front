@@ -2,9 +2,9 @@ import axios from 'axios';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-require('dotenv').config();
 
-const baseUrl = process.env.BACKEND;
+
+const baseUrl = process.env.REACT_APP_BACKEND;
 
 export default function AddDepartment() {
 

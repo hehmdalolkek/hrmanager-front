@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
+const baseUrl = process.env.REACT_APP_BACKEND;
 
 export default function Home() {
+  console.log(baseUrl);
 
   const [departments, setDepartments] = useState([]);
-
-  const { id } = useParams();
 
   useEffect(() => {
     loadDepartments();
   }, []);
 
   const loadDepartments = async () => {
-    const result = await axios.get("http://localhost:8080/api/departments");
+    const result = await axios.get(`${baseUrl}/departments`);
     setDepartments(result.data);
   };
 
   const deleteDepartment = async (id) => {
-    await axios.delete(`http://localhost:8080/api/departments/${id}`);
+    await axios.delete(`${baseUrl}/departments/${id}`);
     loadDepartments();
   };
 

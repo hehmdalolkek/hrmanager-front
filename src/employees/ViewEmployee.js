@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-require('dotenv').config();
 
-const baseUrl = process.env.BACKEND;
+
+const baseUrl = process.env.REACT_APP_BACKEND;
 
 export default function ViewEmployee() {
 
