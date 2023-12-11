@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+require('dotenv').config();
 
-
-const baseUrl = "http://localhost:8080/api";
+const baseUrl = process.env.BACKEND-URL;
 
 export default function ViewEmployee() {
 
