@@ -10,8 +10,8 @@ export default function Navbar() {
           <Link className="navbar-brand" to="/">HRManager</Link>
 
           <div className="d-flex">
-            <Link className="btn btn-outline-light me-2" to='/adddepartment'>Add Department</Link>
-            <Link className="btn btn-outline-light" to='/addemployee'>Add Employee</Link>
+            <Link className="btn btn-outline-light me-2" to='/adddepartment'>Добавить отдел</Link>
+            <Link className="btn btn-outline-light" to='/addemployee'>Добавить сотрудника</Link>
           </div>
           
         </div>

@@ -34,7 +34,7 @@ export default function EditEmployee() {
     setValue('salary', result.data.salary);
     setValue('department.id', result.data.department.id);
     setValue('department.title', result.data.department.title);
-    
+
     setDepartmentId(result.data.department.id);
   };
 
@@ -64,7 +64,7 @@ export default function EditEmployee() {
     <div className='container mb-5'>
       <div className='row'>
         <div className='col-md-6 offset-md-3 border shadow p-4 mt-4'>
-          <h2 className='text-center m-4 mb-5'>Edit employee</h2>
+          <h2 className='text-center m-4 mb-5'>Редактировать данные сотрудника</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-floating mb-3">
@@ -75,12 +75,12 @@ export default function EditEmployee() {
                 placeholder="Enter name of employee"
                 name='name'
                 {...register("name", {
-                  required: "Name is required",
-                  minLength: { value: 2, message: "Name must be at least 2 characters" },
-                  maxLength: { value: 32, message: "The name must be no more than 32 characters" }
+                  required: "Укажите имя",
+                  minLength: { value: 2, message: "Должно содержать минимум 2 символа" },
+                  maxLength: { value: 32, message: "Должно содержать максимум 32 символа" }
                 })}
               />
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Имя</label>
               {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
             </div>
 
@@ -92,12 +92,12 @@ export default function EditEmployee() {
                 placeholder="Enter surname of employee"
                 name='surname'
                 {...register("surname", {
-                  required: "Surname is required",
-                  minLength: { value: 2, message: "Surname must be at least 2 characters" },
-                  maxLength: { value: 32, message: "The surname must be no more than 32 characters" }
+                  required: "Укажите фамилию",
+                  minLength: { value: 2, message: "Должно содержать минимум 2 символа" },
+                  maxLength: { value: 32, message: "Должно содержать максимум 32 символа" }
                 })}
               />
-              <label htmlFor="surname">Surname</label>
+              <label htmlFor="surname">Фамилия</label>
               {errors.surname && <div className="invalid-feedback">{errors.surname.message}</div>}
             </div>
 
@@ -109,12 +109,12 @@ export default function EditEmployee() {
                 placeholder="Enter age of employee"
                 name='age'
                 {...register("age", {
-                  required: "Age is required",
-                  min: { value: 18, message: "Age must not be under 18" },
-                  max: { value: 100, message: "Age must not be more than 100" }
+                  required: "Укажите возраст",
+                  min: { value: 18, message: "Возраст должен быть не меньше 18 лет" },
+                  max: { value: 100, message: "Возраст должен быть не более 100 лет" }
                 })}
               />
-              <label htmlFor="age">Age</label>
+              <label htmlFor="age">Возраст</label>
               {errors.age && <div className="invalid-feedback">{errors.age.message}</div>}
             </div>
 
@@ -126,11 +126,11 @@ export default function EditEmployee() {
                 placeholder="Enter phone number of employee"
                 name='phone'
                 {...register("phone", {
-                  required: "Phone is required",
-                  pattern: { value: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/, message: "The phone number must be in the format +7(927)999-99-99" }
+                  required: "Укажите номер телефона",
+                  pattern: { value: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/, message: "Номер телефона должен быть в формате: +7(927)999-99-99" }
                 })}
               />
-              <label htmlFor="phone">Phone number</label>
+              <label htmlFor="phone">Номер телефона</label>
               {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}
             </div>
 
@@ -142,12 +142,12 @@ export default function EditEmployee() {
                 placeholder="Enter experience of employee"
                 name='experience'
                 {...register("experience", {
-                  required: "Experience is required",
-                  min: { value: 0, message: "Experience cannot be less than 0" },
-                  max: { value: 100, message: "Experience cannot be more than 100" }
+                  required: "Укажите опыт работы",
+                  min: { value: 0, message: "Опыт работы не может быть меньше 0" },
+                  max: { value: 100, message: "Опыт работы не может быть больше 100" }
                 })}
               />
-              <label htmlFor="experience">Experience</label>
+              <label htmlFor="experience">Опыт работы</label>
               {errors.experience && <div className="invalid-feedback">{errors.experience.message}</div>}
             </div>
 
@@ -155,21 +155,21 @@ export default function EditEmployee() {
               <select
                 className={`form-select ${errors.department ? "is-invalid" : ""}`}
                 aria-label="Department"
-                name="department.id"
+                name="department"
                 id="department"
-                onChange={handleDepartmentIdChange}
                 {...register("department.id", {
                   required: true
                 })}
               >
+                <option value="">Выберите отдел</option>
                 {
                   departments.map((department, index) => (
                     <option key={index} value={department.id}>{department.title}</option>
                   ))
                 }
               </select>
-              <label for="department">Department</label>
-              {errors.department && <span className="text-danger">Department is required</span>}
+              <label for="department">Отдел</label>
+              {errors.department && <span className="invalid-feedback">Укажите отдел</span>}
             </div>
 
             <div className="form-floating mb-3">
@@ -180,16 +180,16 @@ export default function EditEmployee() {
                 placeholder="Enter salary of employee"
                 name='salary'
                 {...register("salary", {
-                  required: "salary is required",
-                  min: { value: 0, message: "Salary cannot be less than 0" }
+                  required: "Укажите зарплату",
+                  min: { value: 0, message: "Зарплата не может быть меньше 0" }
                 })}
               />
-              <label htmlFor="salary">Salary</label>
+              <label htmlFor="salary">Зарплата</label>
               {errors.salary && <div className="invalid-feedback">{errors.salary.message}</div>}
             </div>
 
-            <button type='submit' className='btn btn-primary'>Submit</button>
-            <Link className='btn btn-outline-danger mx-2' to={`/viewdepartment/${departmentId}`}>Cancel</Link>
+            <button type='submit' className='btn btn-primary'>Сохранить</button>
+            <Link className='btn btn-outline-danger mx-2' to={`/viewdepartment/${departmentId}`}>Отменить</Link>
           </form>
 
         </div>

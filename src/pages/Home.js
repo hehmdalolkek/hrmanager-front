@@ -31,8 +31,8 @@ export default function Home() {
               <div key={index} className="border shadow d-flex mb-3 align-items-center">
                 <Link className='btn flex-fill py-4 fs-4' to={`/viewdepartment/${department.id}`}>{department.title}</Link>
                 <div className='me-4'>
-                  <Link className='btn btn-outline-primary me-3' to={`/editdepartment/${department.id}`}>Edit</Link>
-                  <button className='btn btn-outline-danger' onClick={() => deleteDepartment(department.id)}>Delete</button>
+                  <Link className='btn btn-outline-primary me-3' to={`/editdepartment/${department.id}`}>Изменить</Link>
+                  <button className='btn btn-outline-danger' onClick={() => deleteDepartment(department.id)}>Удалить</button>
                 </div>
               </div>
             ))

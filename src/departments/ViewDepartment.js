@@ -48,10 +48,10 @@ export default function ViewDepartment() {
       <div className='row'>
 
         <div className='col-md-9 mx-auto border shadow p-4 mt-4'>
-          <h2 className='text-center m-4'>Department: {department.title}</h2>
+          <h2 className='text-center m-4'>Отдел: {department.title}</h2>
 
           <div className='col-md-8 mx-auto'>
-            <b>Description:</b>
+            <b>Описание:</b>
             <p>{department.description}</p>
           </div>
         </div>
@@ -62,8 +62,8 @@ export default function ViewDepartment() {
               <div key={index} className="border shadow d-flex mb-3 align-items-center">
                 <Link className='btn flex-fill py-4 fs-4' to={`/viewemployee/${employee.id}`}>{employee.name} {employee.surname}</Link>
                 <div className='me-4'>
-                  <Link className='btn btn-outline-primary me-3' to={`/editemployee/${employee.id}`}>Edit</Link>
-                  <button className='btn btn-outline-danger' onClick={() => deleteEmployee(employee.id)}>Delete</button>
+                  <Link className='btn btn-outline-primary me-3' to={`/editemployee/${employee.id}`}>Изменить</Link>
+                  <button className='btn btn-outline-danger' onClick={() => deleteEmployee(employee.id)}>Удалить</button>
                 </div>
               </div>
             ))
